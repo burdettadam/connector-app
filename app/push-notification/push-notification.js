@@ -3,8 +3,8 @@ import React, { PureComponent } from 'react'
 import { View } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import firebase from 'react-native-firebase'
-import type { Notification, NotificationOpen } from 'react-native-firebase'
+//import firebase from 'react-native-firebase'
+//import type { Notification, NotificationOpen } from 'react-native-firebase'
 import {
   pushNotificationPermissionAction,
   updatePushToken,
@@ -42,22 +42,19 @@ export class PushNotification extends PureComponent<
 
   componentDidMount = async () => {
     // TODO: refactor to run this based off of actions so that we're not creating a new push notification token when user is trying to restore wallet
-
     // Sets the current badge number on the app icon to zero.
     // iOS only for now.
-    firebase.notifications().setBadge(0)
+    //firebase.notifications().setBadge(0)
     // Removes all delivered notifications.
-    firebase.notifications().removeAllDeliveredNotifications()
-
+    //firebase.notifications().removeAllDeliveredNotifications()
     // When a notification is displayed, the listener is invoked with the notification.
-    this.notificationDisplayedListener = firebase
-      .notifications()
-      .onNotificationDisplayed((notification: Notification) => {
-        this.onPushNotificationReceived(this.notificationParser(notification))
-      })
-
+    //this.notificationDisplayedListener = firebase
+    //  .notifications()
+    //  .onNotificationDisplayed((notification: Notification) => {
+    //    this.onPushNotificationReceived(this.notificationParser(notification))
+    //  })
     // When a notification is received, but not displayed, the listener is invoked with the notification.
-    this.notificationListener = firebase
+    /*this.notificationListener = firebase
       .notifications()
       .onNotification((notification: Notification) => {
         this.onPushNotificationReceived(this.notificationParser(notification))
@@ -73,7 +70,6 @@ export class PushNotification extends PureComponent<
         const notification: Notification = notificationOpen.notification
         this.onPushNotificationReceived(this.notificationParser(notification))
       })
-
     try {
       // Due to the delay in the React Native bridge, the onNotification listeners will not be available at startup, so this method can be used to check to see if the application was opened by a notification.
       const notificationOpen: NotificationOpen = await firebase
@@ -91,13 +87,13 @@ export class PushNotification extends PureComponent<
     } catch (e) {
       // TODO: handle error better
       console.log(e)
-    }
+    }*/
   }
 
   listenForTokenUpdate() {
-    this.refreshTokenListener = firebase.messaging().onTokenRefresh(token => {
-      this.saveDeviceToken(token)
-    })
+    //this.refreshTokenListener = firebase.messaging().onTokenRefresh(token => {
+    //  this.saveDeviceToken(token)
+    //})
   }
 
   onPushNotificationReceived(notificationPayload: NotificationPayload) {
@@ -113,7 +109,7 @@ export class PushNotification extends PureComponent<
   }
 
   getToken() {
-    firebase
+    /* firebase
       .messaging()
       .getToken()
       .then(token => {
@@ -124,7 +120,7 @@ export class PushNotification extends PureComponent<
         } else {
           // user doesn't have a device token
         }
-      })
+      })*/
   }
 
   componentDidUpdate(prevProps: PushNotificationProps) {

@@ -184,10 +184,10 @@ dependencies {
     compile project(':react-native-keep-screen-on')
     compile project(':react-native-svg')
     compile project(':react-native-pbkdf2')
-    compile(project(":react-native-firebase")){
+    /*compile(project(":react-native-firebase")){
         exclude group: "com.google.android.gms" // very important
         exclude group: 'com.android.support', module: 'support-content'
-    }
+    }*/
     compile project(':react-native-zip-archive')
     compile project(':react-native-randombytes')
     compile project(':react-native-document-picker')
@@ -197,7 +197,7 @@ dependencies {
     compile project(':react-native-version-number')
     compile project(':react-native-image-crop-picker')
     compile project(':react-native-image-resizer')
-    compile 'com.google.firebase:firebase-messaging:11.8.0'
+    //compile 'com.google.firebase:firebase-messaging:11.8.0'
     implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
     // <-- Add this line if you wish to use badge on Android
     // If you are receiving Google Play API availability issues, add the following dependency
@@ -238,5 +238,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
 

@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme"
         android:icon="@mipmap/ic_launcher">
 
-        <service android:name="io.invertase.firebase.messaging.RNFirebaseMessagingService">
+        <!--service android:name="io.invertase.firebase.messaging.RNFirebaseMessagingService">
             <intent-filter>
             <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
@@ -44,7 +44,7 @@
         <service android:name="io.invertase.firebase.messaging.RNFirebaseBackgroundMessagingService" />
 
         <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@mipmap/ic_launcher_1"/>
-        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/ic_logo_color" />
+        <meta-data android:name="com.google.firebase.messaging.default_notification_color" android:resource="@color/ic_logo_color" /> -->
         <!-- launchMode needs to be singleTask, otherwise deep links will not work correctly -->
       <activity
         android:name=".MainActivity"

@@ -1,7 +1,7 @@
 // @flow
 import { decryptWalletFile, copyToPath } from '../bridge/react-native-cxs/RNCxs'
 import { unzip } from 'react-native-zip-archive'
-import firebase from 'react-native-firebase'
+//import firebase from 'react-native-firebase'
 import {
   takeLatest,
   all,
@@ -131,9 +131,9 @@ export function* restoreFileDecrypt(
     // so after push token update
     // we need to do requestPermission or else push notifications won't come
     const requestPushNotificationPermission = () => {
-      firebase.messaging().requestPermission()
+      //firebase.messaging().requestPermission()
     }
-    yield call(requestPushNotificationPermission)
+    //yield call(requestPushNotificationPermission)
     yield put(pushNotificationPermissionAction(true))
     yield put(restoreStatus(RestoreStatus.RESTORE_DATA_STORE_SUCCESS))
   } catch (e) {

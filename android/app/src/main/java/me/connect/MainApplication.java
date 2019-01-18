@@ -6,9 +6,9 @@ import com.facebook.react.ReactApplication;
 import com.gijoehosaphat.keepscreenon.KeepScreenOnPackage;
 import com.horcrux.svg.SvgPackage;
 import rnpbkdf2.PBKDF2Package;
-import io.invertase.firebase.RNFirebasePackage;
-import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
-import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
+//import io.invertase.firebase.RNFirebasePackage;
+//import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
+//import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 import com.rnziparchive.RNZipArchivePackage;
 import com.bitgo.randombytes.RandomBytesPackage;
 import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
@@ -52,9 +52,9 @@ public class MainApplication extends Application implements ShareApplication, Re
             new KeepScreenOnPackage(),
             new SvgPackage(),
             new PBKDF2Package(),
-        new RNFirebasePackage(),
-        new RNFirebaseNotificationsPackage(),
-        new RNFirebaseMessagingPackage(),
+        //new RNFirebasePackage(),
+        //new RNFirebaseNotificationsPackage(),
+        //new RNFirebaseMessagingPackage(),
         new RNZipArchivePackage(),
         new RandomBytesPackage(),
         new ReactNativeDocumentPicker(),

@@ -35,7 +35,7 @@ jest.mock('react-navigation', () => ({
   },
 }))
 
-jest.mock('react-native-firebase', () => ({
+/*jest.mock('react-native-firebase', () => ({
   notifications: jest.fn(() => ({
     onNotificationDisplayed: jest.fn(() => Promise.resolve()),
     onNotification: jest.fn(() => Promise.resolve()),
@@ -47,7 +47,7 @@ jest.mock('react-native-firebase', () => ({
     onTokenRefresh: jest.fn(() => Promise.resolve()),
     getToken: jest.fn(() => Promise.resolve()),
   })),
-}))
+}))*/
 
 jest.mock('PixelRatio', () => ({
   get: jest.fn(() => 3), //PixelRatio.get() === 3 then iPhone 6 plus

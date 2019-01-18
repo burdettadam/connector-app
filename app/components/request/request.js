@@ -1,7 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react'
 import { View, Alert } from 'react-native'
-import firebase from 'react-native-firebase'
+//import firebase from 'react-native-firebase'
 import { bindActionCreators } from 'redux'
 import { Container, TouchId } from '../../components'
 import { connect } from 'react-redux'
@@ -75,9 +75,9 @@ export class Request extends PureComponent<RequestProps, RequestState> {
   }
 
   onAction = (response: ResponseTypes) => {
-    return firebase
-      .messaging()
-      .requestPermission()
+    /*return //firebase
+      //.messaging()
+      //.requestPermission()
       .then(() => {
         this.props.pushNotificationPermissionAction(true)
         this.checkIfTouchIdEnabled(response)
@@ -94,7 +94,8 @@ export class Request extends PureComponent<RequestProps, RequestState> {
         // TODO: we did not get push token
         // now what should we do?
         captureError(error, this.props.showErrorAlerts)
-      })
+      })*/
+    return this.checkIfTouchIdEnabled(response)
   }
 
   componentDidUpdate(prevProps: RequestProps) {
